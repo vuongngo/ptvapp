@@ -23,7 +23,6 @@ module.exports = function(sequelize, DataTypes){
     timestamps: true,
     classMethods: {
       associate: function(models) {
-      	User.hasMany(models.Schedule);
       	User.hasMany(models.Travel);
       },
       findAndUpdate: function(arg, elem) {
@@ -42,7 +41,6 @@ module.exports = function(sequelize, DataTypes){
               reject({error: 'User does not exist'});
             })
       	})
-
       } 
     },
     hooks: {

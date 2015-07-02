@@ -86,6 +86,7 @@ describe('authentication test', function(){
   	  .set('Authorization', 'Bearer ' + token)
   	  .set('Accept', 'application/json')
   	  .end(function(err, res){
+  	  	console.log(err);
   	  	expect(res.status).to.eql(204);
   	  	done();
   	  })

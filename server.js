@@ -24,8 +24,8 @@ app.use(passport.initialize());
 // Get routes from routes/index.js
 routes(app);
 
-app.listen(3000, function(){
-	console.log('Express listen on port 3000')
+app.listen(conf.env_port, function(){
+	console.log('Express listen on port ' + conf.env_port)
 });
 
 // Export app to use in test

@@ -1,7 +1,8 @@
 'user strict';
+var isUser = require('../lib/isUser');
 var ptv = require('./ptv');
 var auth = require('./authentication');
-var isUser = require('../lib/isUser');
+var schedule = require('./schedule'); 
 
 module.exports = function(app) {
   app.get('/', ptv.health_check);
@@ -12,4 +13,5 @@ module.exports = function(app) {
   app.post('/signup', auth.sign_up);
   app.post('/signin', auth.sign_in);
   app.get('/signout', isUser, auth.sign_out);
+  app.post('/schedule', schedule.create);
 }

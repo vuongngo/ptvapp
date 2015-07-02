@@ -11,4 +11,8 @@ module.exports = {
   // Email
   email: email.email,
   password: email.password,
+
+  // ENV port
+  env_port: 88
+
 };

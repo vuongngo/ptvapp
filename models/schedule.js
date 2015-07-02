@@ -2,27 +2,6 @@
 
 module.exports = function(sequelize, DataTypes){ 
   var Schedule = sequelize.define('Schedule', {
-	from: {
-	  type: DataTypes.INTEGER,
-	  validate: {
-	  	isInt: true,
-	  	max: 50000
-	  }
-	},
-	line: {
-	  type: DataTypes.INTEGER,
-	  validate: {
-	  	isInt: true,
-	  	max: 50000
-	  }
-	},
-	to: {
-	  type: DataTypes.INTEGER,
-	  validate: {
-	  	isInt: true,
-	  	max: 50000
-	  }
-	},
 	time: {
 	  type: DataTypes.DATE,
 	  validate: {
@@ -39,7 +18,6 @@ module.exports = function(sequelize, DataTypes){
     timestamps: true,
 	classMethods: {
       associate: function(models) {
-        Schedule.belongsTo(models.User);
         Schedule.belongsTo(models.Travel);
       }
     }    
