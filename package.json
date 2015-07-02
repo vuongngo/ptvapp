@@ -1,0 +1,30 @@
+{
+  "name": "catchnshare",
+  "version": "0.0.1",
+  "description": "Catch And Share for Public transport in Melbourne",
+  "dependencies": {
+    "bcryptjs": "~2.1.0",
+    "body-parser": "~1.13.1",
+    "crypto-js": "~3.1.5",
+    "expect.js": "~0.3.1",
+    "express": "~4.13.0",
+    "jsonwebtoken": "~5.0.2",
+    "mocha": "~2.2.5",
+    "morgan": "~1.6.0",
+    "mysql": "~2.7.0",
+    "passport": "~0.2.2",
+    "passport-local": "~1.0.0",
+    "path": "~0.11.4",
+    "request": "~2.58.0",
+    "sequelize": "~3.3.2",
+    "sequelize-cli": "^1.7.0",
+    "superagent": "~1.2.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node server.js",
+    "test": "make test"
+  },
+  "author": "Vuong Ngo",
+  "license": "ISC"
+}
