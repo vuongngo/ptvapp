@@ -4,6 +4,7 @@ var logger = require('morgan');
 var app = express();
 var routes = require('./routes/index');
 var passport = require('./lib/passport');
+var params = require('./lib/params');
 
 // Set environment variables
 var Config = require('./config/config.js');
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(logger('dev'));
 app.use(passport.initialize());
+params(app);
 
 // Get routes from routes/index.js
 routes(app);

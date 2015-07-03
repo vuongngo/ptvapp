@@ -3,13 +3,17 @@ var expect = require('expect.js');
 var token;
 
 describe('authentication test', function(){
-  before(function() {
+  before(function(done) {
 	var server = require('../server');
+	done();
   });
 
-  after(function() {
+  after(function(done) {
 	var models = require('../models');
-	models.sequelize.drop()
+	models.sequelize.drop({force: true})
+	  .then(function(){
+	  	done();
+	  })
   });
 
   it('fail to signup', function(done){

@@ -1,8 +1,19 @@
 var superagent = require('superagent');
 var expect = require('expect.js');
-var server = require('../server');
 
 describe('restful api for public transport', function(){
+  before(function(done) {
+	var server = require('../server');
+  	done();
+  });
+
+  after(function(done) {
+	var models = require('../models');
+	models.sequelize.drop({force: true})
+	  .then(function(){
+	  	done();
+	  })
+  });
 
   it('do healthcheck', function(done){
 	superagent.get('http://localhost:3000/')

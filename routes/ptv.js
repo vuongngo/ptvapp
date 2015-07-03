@@ -56,7 +56,7 @@ module.exports = {
   // Get departures with Broad Departure api
   get_departures: function (req, res) {
     var params = req.body;
-    fetch.getDepartures(params.mode, params.stop, params.limit, function (error, response) {
+    fetch.getBroadDepartures(params.mode, params.stop, params.limit, function (error, response) {
       if (error) {
         return res.status(404).json(error);
       } else {

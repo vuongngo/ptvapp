@@ -13,5 +13,6 @@ module.exports = function(app) {
   app.post('/signup', auth.sign_up);
   app.post('/signin', auth.sign_in);
   app.get('/signout', isUser, auth.sign_out);
-  app.post('/schedule', schedule.create);
+  app.post('/schedule', schedule.createOrUpdate);
+  app.get('/schedule/:uid', schedule.find);
 }

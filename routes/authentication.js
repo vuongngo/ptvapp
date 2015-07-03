@@ -25,10 +25,12 @@ module.exports = {
   		} else {
 	        var token;                  
 	        if (user.accessToken) {
+            // Verify if stored token is expired
 	          jwt.verify(user.accessToken, secret, function(err, decoded) {
 	            if (err) {
 	              token = jwt.sign({user: user}, secret, { expiresInMinutes: 60*24 });          
-	              models.User.findAndUpdate({id: user.id}, {accessToken: token})
+	              // Update new token is previous token is expired 
+                models.User.findAndUpdate({id: user.id}, {accessToken: token})
 	                .then(function(obj) {
 	                  return res.status(200).json(obj);
 	                })
@@ -36,10 +38,13 @@ module.exports = {
 	                  if (err) return res.status(400).json(err);
 	                })
 	            } else {
+                // Return user with previous accessToken
+                // Reason: keep login in other devices
 	              return res.status(200).json(user);
 	            }
 	          })
 	        } else {
+            // In case user signout or first login, create new token
 	          token = jwt.sign({user: user}, secret, { expiresInMinutes: 60*24 });          
               models.User.findAndUpdate({id: user.id}, {accessToken: token})
                 .then(function(obj) {

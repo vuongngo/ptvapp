@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes){
 	  type: DataTypes.INTEGER,
 	  validate: {
 	  	isInt: true,
-	  	isIn: [0, 1, 2, 3, 4]
+	  	max: 4
 	  }
 	},
 	line: {
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes){
 	  type: DataTypes.INTEGER,
 	  validate: {
 	  	isInt: true,
-	  	isIn: [0, 1] 
+	  	max: 1 
 	  }
 	},
 	limit: {
