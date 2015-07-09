@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+<div class="panel-heading">Direction: <%= platform.direction.direction_name %></div>
+<div class="panel-body">
+  Stop: <%= platform.stop.location_name %>
+  </br>
+  Departure: <%= moment(time_timetable_utc).fromNow() %>
+</div>
+</div>

@@ -1,0 +1,16 @@
+body {
+	background-color: #004d40;
+}
+h2 {
+	color: #ffffff;
+	padding: 10px;
+}
+label {
+	color: #e0f2f1;
+}
+input {
+	margin-bottom: 10px;
+}
+#search {
+	margin: 10px;
+}
