@@ -2,9 +2,9 @@
 
 // Return variable according to environment
 
-var dev = require('./dev.js');
-var prod = require('./prod.js');
-var test = require('./test.js');
+var dev = require('./dev');
+var prod = require('./prod');
+var test = require('./test');
 
 module.exports = function(){
   switch(process.env.NODE_ENV){

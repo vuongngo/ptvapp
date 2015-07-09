@@ -1,5 +1,5 @@
 {
-  "name": "catchnshare",
+  "name": "ptvapp",
   "version": "0.0.1",
   "description": "Catch And Share for Public transport in Melbourne",
   "dependencies": {
@@ -22,7 +22,7 @@
     "async": "1.3.0",
     "lodash": "3.10.0"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=development node server.js",
     "test": "make test"

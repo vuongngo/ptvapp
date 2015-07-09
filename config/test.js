@@ -1,7 +1,7 @@
 // Set test environment variables
 'use strict';
-var ptv = require('./ptv.js');
-var email = require('./email.js');
+var ptv = require('./ptv');
+var email = require('./email');
 
 module.exports = {
   // PTV keys  
@@ -14,7 +14,7 @@ module.exports = {
 
   db: 'catchnshare',
   db_user: 'root',
-  db_password: '',
+  db_password: 'vdpn14491992',
   db_host: 'localhost',
 
   // ENV port

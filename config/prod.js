@@ -1,7 +1,7 @@
 // Set production environment variables
 'use strict';
-var ptv = require('./ptv.js');
-var email = require('./email.js');
+var ptv = require('./ptv');
+var email = require('./email');
 
 module.exports = {
   // PTV keys  

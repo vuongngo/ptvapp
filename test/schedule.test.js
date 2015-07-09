@@ -31,7 +31,7 @@ describe('schedule test', function(){
   });
 
   it('fail to create schedule', function(done){
-	superagent.post('http://localhost:3000/schedule')
+	superagent.post('http://localhost:3000/api/schedule')
 	  .send({"username": "", "password": "12345"})
 	  .set('Accept', 'application/json')
 	  .end(function(err, res){
@@ -42,7 +42,7 @@ describe('schedule test', function(){
   });
 
   it('create one schedule', function(done){
-  	superagent.post('http://localhost:3000/schedule')
+  	superagent.post('http://localhost:3000/api/schedule')
   	  .send({'userId': uid, 'mode': 1, 'line': 1, 'stop': 2, 'directionid': 1, 'limit': 1, 'timeslot': date, 'time': date, 'day': ['Mon']})
   	  .set('Accept', 'application/json')
   	  .end(function(err, res){
@@ -54,7 +54,7 @@ describe('schedule test', function(){
   });
 
   it('create one schedule', function(done){
-  	superagent.post('http://localhost:3000/schedule')
+  	superagent.post('http://localhost:3000/api/schedule')
   	  .send({'userId': uid, 'mode': 1, 'line': 1, 'stop': 2, 'directionid': 1, 'limit': 1, 'timeslot': date, 'time': date, 'day': ['Tues']})
   	  .set('Accept', 'application/json')
   	  .end(function(err, res){
@@ -66,7 +66,7 @@ describe('schedule test', function(){
   });
 
   it('create many schedules', function(done){
-  	superagent.post('http://localhost:3000/schedule')
+  	superagent.post('http://localhost:3000/api/schedule')
   	  .send({'userId': uid, 'mode': 2, 'line': 1, 'stop': 2, 'directionid': 1, 'limit': 1, 'timeslot': date, 'time': date, 'day': ['Mon', 'Wed', 'Sat']})
   	  .set('Accept', 'application/json')
   	  .end(function(err, res){
@@ -78,7 +78,7 @@ describe('schedule test', function(){
   });
 
   it('get user', function(done){
-    superagent.get('http://localhost:3000/schedule/' + uid)
+    superagent.get('http://localhost:3000/api/schedule/' + uid)
       .set('Accept', 'application/json')
       .end(function(err, res){
         expect(res.status).to.eql(200);

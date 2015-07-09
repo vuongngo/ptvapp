@@ -7,7 +7,7 @@ var passport = require('./lib/passport');
 var params = require('./lib/params');
 
 // Set environment variables
-var Config = require('./config/config.js');
+var Config = require('./config/config');
 var conf = new Config();
 
 // Set connection with MySQL database
@@ -17,6 +17,7 @@ models.sequelize.sync().then(function() {
 });
 
 // Setting express middleware
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(logger('dev'));
