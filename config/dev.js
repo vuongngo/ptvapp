@@ -15,7 +15,7 @@ module.exports = {
   // Database connection
   db: 'catchnshare',
   db_user: 'root',
-  db_password: 'vdpn14491992',
+  db_password: '',
   db_host: 'localhost',
 
   // ENV port

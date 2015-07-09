@@ -1,8 +1,13 @@
 # PTV API SETUP
-Build with Express + Sequelize
+
+Build with Express + Sequelize + Backbone + Bootstrap
+
 # TODOs
-Add chron jobs and frontend with Backbonejs
+
+Add chron jobs and user login for reminder
+
 # How to use
+
 #####Setting
 
 * Create ptv.js file in config folder
@@ -28,4 +33,6 @@ npm start
 ```
 npm test
 ```
+
+#####[Demo](http://ptvapp.herokuapp.com)
 
